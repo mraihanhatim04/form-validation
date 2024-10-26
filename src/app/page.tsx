@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,10 +15,17 @@ export default function Home() {
           priority
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <p className="mb-2 text-xl">Form-Validation with zod</p>
+          <p className="mb-2 text-xl font-serif">Form-Validation with zod</p>
         </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row"></div>
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <Link href={"/login"}>
+            <Button>Login Form</Button>
+          </Link>
+          <Link href={"/register"}>
+            <Button>Register Form</Button>
+          </Link>
+        </div>
       </main>
     </div>
   );
