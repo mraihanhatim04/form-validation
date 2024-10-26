@@ -56,27 +56,23 @@ export default function Login() {
   // State to control password visibility
   const [showPassword, setShowPassword] = useState(false);
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    alert(`Username: ${values.username}`);
-    alert(`Password: ${values.password}`);
+  function handeLogin(values: z.infer<typeof formSchema>) {
+    alert(`Check console for values`);
     console.log(values);
   }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <Card className="w-[400px]">
+      <Card className="w-[350px] shadow-2xl">
         <CardHeader>
           <CardTitle className="text-3xl">Login</CardTitle>
           <CardDescription className="font-semibold text-md text-slate-700">
-            Please enter your details ✨
+            Please enter your details✨
           </CardDescription>
         </CardHeader>
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 w-full"
-          >
-            <CardContent className="space-y-4">
+          <form onSubmit={form.handleSubmit(handeLogin)} className="w-full">
+            <CardContent className="flex flex-col gap-2 mt-[-10]">
               <FormField
                 control={form.control}
                 name="username"
@@ -94,7 +90,6 @@ export default function Login() {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="password"
@@ -127,7 +122,7 @@ export default function Login() {
               />
             </CardContent>
             <CardFooter>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full mt-[-10]">
                 Submit
               </Button>
             </CardFooter>
