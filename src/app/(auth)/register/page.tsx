@@ -23,7 +23,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 
 // Define the schema for validation using zod
 const formSchema = z
@@ -67,12 +67,13 @@ export default function Register() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   function handleRegister(values: z.infer<typeof formSchema>) {
+    alert(`Check console for values`);
     console.log(values);
   }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen p-12">
-      <Card className="w-[450px]">
+      <Card className="w-[450px] shadow-lg shadow-slate-50">
         <CardHeader>
           <CardTitle className="text-3xl">Register</CardTitle>
           <CardDescription className="font-semibold text-md text-slate-700">
@@ -177,9 +178,13 @@ export default function Register() {
                 )}
               />
             </CardContent>
-            <CardFooter>
-              <Button type="submit" className="w-full mt-[-10]">
+            <CardFooter className="flex flex-col gap-2 mt-[-10]">
+              <Button type="submit" className="w-full ">
                 Submit
+              </Button>
+              <Button type="submit" className="w-full">
+                <FaGoogle />
+                With Google
               </Button>
             </CardFooter>
           </form>
