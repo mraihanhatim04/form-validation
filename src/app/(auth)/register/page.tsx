@@ -80,11 +80,8 @@ export default function Register() {
           </CardDescription>
         </CardHeader>
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(handleRegister)}
-            className="space-y-4 w-full"
-          >
-            <CardContent className="space-y-4">
+          <form onSubmit={form.handleSubmit(handleRegister)}>
+            <CardContent className="flex flex-col gap-2 mt-[-10]">
               <FormField
                 control={form.control}
                 name="email"
@@ -119,7 +116,6 @@ export default function Register() {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="password"
@@ -150,7 +146,6 @@ export default function Register() {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="confirmPassword"
@@ -183,7 +178,7 @@ export default function Register() {
               />
             </CardContent>
             <CardFooter>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full mt-[-10]">
                 Submit
               </Button>
             </CardFooter>
