@@ -23,7 +23,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 // Define the schema for validation using zod
 const formSchema = z.object({
@@ -63,7 +63,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <Card className="w-[380px] shadow-lg shadow-slate-50">
+      <Card className="w-[350px] shadow-2xl">
         <CardHeader>
           <CardTitle className="text-3xl">Login</CardTitle>
           <CardDescription className="font-semibold text-md text-slate-700">
@@ -121,13 +121,9 @@ export default function Login() {
                 )}
               />
             </CardContent>
-            <CardFooter className="flex flex-col gap-2 mt-[-10]">
-              <Button type="submit" className="w-full">
-                Login
-              </Button>
-              <Button type="submit" className="w-full">
-                <FaGoogle />
-                With Google
+            <CardFooter>
+              <Button type="submit" className="w-full mt-[-10]">
+                Submit
               </Button>
             </CardFooter>
           </form>
